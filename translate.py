@@ -1,8 +1,16 @@
 import requests
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
+
 
 def translate_text(source_language, target_language, text):
     url = 'https://sunbird-ai-api-5bq6okiwgq-ew.a.run.app'
-    token = ""  # Place the access token here
+    
+    token =  os.getenv("token")
+
 
     headers = {
         "Authorization": f"Bearer {token}",
